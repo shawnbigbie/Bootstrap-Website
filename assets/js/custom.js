@@ -1,10 +1,18 @@
 jQuery( document ).ready(function( $ ) {
 
+    "use strict";
 
-	"use strict";
+        gsap.to(".animate-logo",{
+            duration: 3,
+            opacity: 1,
+            x: 10
+        });
+        
+        gsap.to(".animate-up",{
+            duration: 3,
+            opacity: 1,
+        });
 
-
-    
         $(function() {
             $( "#tabs" ).tabs();
         });
@@ -22,15 +30,15 @@ jQuery( document ).ready(function( $ ) {
         
 
         $(window).scroll(function() {
-          var scroll = $(window).scrollTop();
-          var box = $('.header-text').height();
-          var header = $('header').height();
+        var scroll = $(window).scrollTop();
+        var box = $('.header-text').height();
+        var header = $('header').height();
 
-          if (scroll >= box - header) {
+        if (scroll >= box - header) {
             $("header").addClass("background-header");
-          } else {
+        } else {
             $("header").removeClass("background-header");
-          }
+        }
         });
         if ($('.owl-clients').length) {
             $('.owl-clients').owlCarousel({
